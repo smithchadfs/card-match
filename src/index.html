@@ -3,9 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Week 2 Assignment: Card Match</title>
+  <title>Week 2 Assignment: Card Match Game</title>
 </head>
 <body>
+  <div class="main-container">
+    <header>
+      <div class="header-left">
+        <h1>Card Match Game</h1>
+        <p>Use the three attempts you have to try to find three matching pairs of cards.</p>
+      </div>
+      <div class="header-right">
+        <h2>Attempts left: <span id="attemptsLeft"></span></h2>
+      </div>
+    </header>
+    <main>
+      <div class="game-board">
+        <div class="card-container">
+          <div class="card" data-card-value="A">
+            <div class="card-front">
+              <span>A</span>
+            </div>
+            <div class="card-back">
+              <img src="./images/card-flip-card-image.png" alt="Card back">
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card" data-card-value="A">
+            <div class="card-front">
+              <span>B</span>
+            </div>
+            <div class="card-back">
+              <img src="./images/card-flip-card-image.png" alt="Card back">
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card" data-card-value="A">
+            <div class="card-front">
+              <span>C</span>
+            </div>
+            <div class="card-back">
+              <img src="./images/card-flip-card-image.png" alt="Card back">
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card" data-card-value="A">
+            <div class="card-front">
+              <span>A</span>
+            </div>
+            <div class="card-back">
+              <img src="./images/card-flip-card-image.png" alt="Card back">
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card" data-card-value="A">
+            <div class="card-front">
+              <span>B</span>
+            </div>
+            <div class="card-back">
+              <img src="./images/card-flip-card-image.png" alt="Card back">
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card" data-card-value="A">
+            <div class="card-front">
+              <span>C</span>
+            </div>
+            <div class="card-back">
+              <img src="./images/card-flip-card-image.png" alt="Card back">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 id="winLose"></h3>
+      <button type="reset">Start Over</button>
+      
+    </main>
+    <footer>
+      <p>Card Match Game - Created by Chad Smith</p>
+    </footer>
+  </div>
   <script src="bundle.js"></script>
 </body>
 </html>
