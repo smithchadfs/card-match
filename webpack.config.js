@@ -30,6 +30,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
+    new CopyWebpackPlugin({
+  patterns: [
+    { from: './src/images', to: 'images' }
+  ]
+}),
   ],
   devServer: {
     compress: false,

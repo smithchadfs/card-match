@@ -1,3 +1,165 @@
-html {
-  background: #1c531d;
+// Import Google Font
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+// Colors
+$background: #1c531d;
+$buttonFill: #238ab6;
+$text-color: #ffffff;
+
+// Fonts 
+$font-family: 'Open Sans', sans-serif;
+
+// Padding
+$padding: 20px;
+
+// Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+
+.main-container {
+  background-color: $background;
+  font-family: $font-family;
+  color: $text-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 2rem;
+  padding: $padding;
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+
+    span {
+      color: red;
+    }
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  
+}
+
+main {
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 2rem;
+  padding: $padding;
+  text-align: center;
+
+  .game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    justify-items: center;
+    margin-bottom: 2rem;
+
+    .card-container {
+      width: 180px;
+      height: 250px;
+      perspective: 1000px;
+
+      .card {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.6s;
+        cursor: pointer;
+
+        &.flipped {
+          transform: rotateY(180deg);
+        }
+
+        &.disabled {
+          pointer-events: none;
+          opacity: 0.6;
+        }
+      }
+
+      .card-front, .card-back {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        backface-visibility: hidden;
+      }
+
+      .card-front {
+        transform: rotateY(180deg);
+        background: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        span {
+          font-size: 4rem;
+          font-weight: bold;
+          color: #333;
+        }
+      }
+
+      .card-back {
+        border-radius: 8px;
+        overflow: hidden;
+
+         img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        }
+      }
+
+
+     
+    }
+  }
+
+  button {
+      font-family: $font-family;
+      font-weight: bold;
+      font-size: 1.2rem;
+      background-color: $buttonFill;
+      color: $text-color;
+      border: none;
+      border-radius: 6px;
+      padding: 12px 24px;
+      cursor: pointer;
+      margin-top: 1rem;
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+}
+
+#winLose {
+  display: none;
+  font-size: 2rem;
+  color: $text-color;
+}
+
+
+
+
+
+
